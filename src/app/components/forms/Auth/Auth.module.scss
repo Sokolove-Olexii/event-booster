@@ -1,0 +1,242 @@
+.auth {
+  display: flex;
+  flex-grow: 1;
+  padding: 16px;
+
+  &__position {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    margin: 0 auto;
+    z-index: 1;
+    gap: 40px;
+
+    @media screen and (min-width: 1024px) {
+      flex-direction: row;
+      gap: 120px;
+    }
+  }
+
+  &__logoScrollContainer {
+    display: none;
+  }
+
+  &__card {
+    position: relative;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    transform: translateZ(0);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 32px;
+    padding: 40px 24px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow:
+      0 0 50px rgba(255, 255, 255, 0.03),
+      0 10px 60px rgba(0, 0, 0, 0.5),
+      inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media screen and (min-width: 1024px) {
+      padding: 50px 40px;
+      max-width: 440px;
+      align-items: flex-start;
+    }
+  }
+
+  &__prompt {
+    width: 100%;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    line-height: 1.5;
+    margin: 0 0 16px 0;
+
+    @media screen and (min-width: 1024px) {
+      text-align: left;
+    }
+  }
+
+  &__promptSmall {
+    width: 100%;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    margin: 18px 0;
+
+    @media screen and (min-width: 1024px) {
+      text-align: left;
+    }
+  }
+
+  &__regLink {
+    color: #fff;
+    font-weight: 700;
+    text-decoration: underline;
+    margin-left: 10px;
+  }
+
+  &__form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transform: translateZ(0);
+  }
+
+  &__inputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__label {
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  &__input {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 16px 20px;
+    font-size: 15px;
+    color: #ffffff;
+    transition:
+      border-color 0.2s ease,
+      background-color 0.2s ease,
+      box-shadow 0.2s ease;
+    outline: none;
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.25);
+    }
+
+    &:focus {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.4);
+      box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.08);
+    }
+  }
+
+  &__passwordWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    .auth__input {
+      padding-right: 48px;
+    }
+  }
+
+  &__passwordToggle {
+    position: absolute;
+    right: 16px;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.3);
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    svg {
+      stroke: currentColor;
+    }
+  }
+
+  &__error {
+    color: #ff5555;
+    font-size: 12px;
+    padding-left: 12px;
+    text-shadow: 0 0 8px rgba(255, 85, 85, 0.3);
+  }
+
+  &__btnGroup {
+    display: flex;
+    gap: 16px;
+    margin-top: 16px;
+    flex-direction: column;
+  }
+
+  &__btnLogin {
+    flex: 1;
+    background: #ffffff;
+    color: #000000;
+    border: none;
+    border-radius: 100px;
+    padding: 16px 0;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    box-shadow:
+      0 0 30px rgba(255, 255, 255, 0.15),
+      0 10px 25px rgba(0, 0, 0, 0.3);
+    transition:
+      background 0.2s ease,
+      box-shadow 0.2s ease,
+      transform 0.1s ease;
+
+    &:hover {
+      box-shadow:
+        0 0 45px rgba(255, 255, 255, 0.25),
+        0 12px 28px rgba(0, 0, 0, 0.4);
+    }
+
+    &:active {
+      transform: scale(0.98);
+      box-shadow:
+        0 0 20px rgba(255, 255, 255, 0.1),
+        0 6px 15px rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  &__btnRegister {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.06);
+    color: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 100px;
+    padding: 16px 0;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    transition:
+      background-color 0.2s ease,
+      border-color 0.2s ease,
+      box-shadow 0.2s ease,
+      transform 0.1s ease;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.2);
+      color: #ffffff;
+      box-shadow:
+        0 0 20px rgba(255, 255, 255, 0.05),
+        0 12px 28px rgba(0, 0, 0, 0.3);
+    }
+
+    &:active {
+      transform: scale(0.98);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
+  }
+}
