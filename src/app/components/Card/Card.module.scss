@@ -1,19 +1,20 @@
 .card {
   position: relative;
-  max-width: 196px;
-  overflow: hidden;
+  max-width: 138px;
+  overflow: visible;
   display: flex;
   flex-direction: column;
+  align-items: center;
   cursor: pointer;
 
-  @media screen and (min-width: 320px) and (max-width: 768px) {
-    max-width: 138px;
+  @media screen and (min-width: 768px) {
+    max-width: 194px;
   }
 
   &__imgContainer {
-    margin-top: 13px;
-    width: 180px;
-    height: 227px;
+    margin-top: 9px;
+    width: 128px;
+    height: 161px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -21,28 +22,29 @@
     position: relative;
     z-index: 2;
 
-    @media screen and (min-width: 320px) and (max-width: 768px) {
-      margin-top: 9px;
-      width: 128px;
-      height: 161px;
+    @media screen and (min-width: 768px) {
+      margin-top: 13px;
+      width: 180px;
+      height: 227px;
     }
   }
 
   &__pink {
     position: absolute;
-    right: 0;
-    top: 13px;
-    width: 153px;
-    height: 143px;
-    z-index: 1;
+    right: -15px;
+    top: -15px;
+    width: 108px;
+    height: 101px;
+    z-index: 10;
     box-sizing: border-box;
-    border: 2px solid rgba(220, 86, 197, 0.3);
+    border: 1px solid #dc56c5;
+    opacity: 30%;
     border-radius: 50px 0px 50px 0px;
+    pointer-events: none;
 
-    @media screen and (min-width: 320px) and (max-width: 768px) {
-      top: 9px;
-      width: 108px;
-      height: 101px;
+    @media screen and (min-width: 768px) {
+      width: 153px;
+      height: 143px;
     }
   }
 
@@ -51,75 +53,69 @@
     flex-direction: column;
     z-index: 3;
     padding-top: 5px;
+    width: 100%;
+    overflow: hidden;
   }
 
   &__title {
     margin: 5px 0;
-    padding: 0 20px;
+    padding: 0 10px;
     color: rgb(220, 86, 197);
     font-family: var(--font-montserrat, "Montserrat", sans-serif);
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 700;
-    line-height: 20px;
+    line-height: 17px;
     max-width: 100%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     text-align: center;
 
-    @media screen and (min-width: 320px) and (max-width: 768px) {
+    @media screen and (min-width: 768px) {
+      padding: 0 20px;
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+
+  &__startDate {
+    margin-bottom: 5px;
+    color: rgb(255, 255, 255);
+    font-family: var(--font-montserrat, "Montserrat", sans-serif);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 15px;
+    text-align: center;
+
+    @media screen and (min-width: 768px) {
       font-size: 14px;
       line-height: 17px;
     }
   }
 
-  &__startDate {
-    position: relative;
-    margin-bottom: 5px;
-    color: rgb(255, 255, 255);
-    font-family: var(--font-montserrat, "Montserrat", sans-serif);
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 20px;
-    text-align: center;
-
-    @media screen and (min-width: 320px) and (max-width: 768px) {
-      font-size: 14px;
-      line-height: 17px;
-    }
+  &__venuesPosition {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
   }
 
   &__venues {
     color: rgb(255, 255, 255);
     font-family: var(--font-montserrat, "Montserrat", sans-serif);
-    font-size: 14px;
+    font-size: 11px;
     font-weight: 600;
-    line-height: 17px;
+    line-height: 14px;
     text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-left: 4px;
 
-    @media screen and (min-width: 320px) and (max-width: 768px) {
-      font-size: 12px;
-      line-height: 15px;
-    }
-
-    &::before {
-      margin-right: 4px;
-      content: "";
-      display: inline-block;
-      background-image: url("../../../../public/icons/LocationIcon.svg");
-      width: 7px;
-      height: 10px;
-      background-repeat: no-repeat;
-      background-size: contain;
-
-      @media screen and (min-width: 320px) and (max-width: 768px) {
-        width: 6px;
-        height: 9px;
-        margin-right: 3px;
-      }
+    @media screen and (min-width: 768px) {
+      font-size: 13px;
+      line-height: 16px;
+      margin-left: 5px;
     }
   }
 }

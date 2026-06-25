@@ -4,6 +4,7 @@ const nextConfig: NextConfig = {
   reactCompiler: true,
   output: "export",
   basePath: "/event-booster",
+  trailingSlash: true,
   images: {
     unoptimized: true,
   },

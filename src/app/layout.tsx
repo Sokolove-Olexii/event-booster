@@ -2,6 +2,7 @@ import "./globals.css";
 import { ToastContainer } from "react-toastify";
 import { Roboto, Montserrat, Inter } from "next/font/google";
 import "react-toastify/dist/ReactToastify.css";
+import "react-loading-skeleton/dist/skeleton.css";
 
 const roboto = Roboto({
   weight: ["400", "500", "700", "900"],
@@ -28,7 +29,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${roboto.variable} ${montserrat.variable} ${inter.variable}`}>
+      <body
+        className={`${roboto.variable} ${montserrat.variable} ${inter.variable}`}
+      >
         {children}
         <ToastContainer
           position="top-right"

@@ -4,7 +4,7 @@ import { useState, useEffect, useMemo } from "react";
 import debounce from "debounce";
 import SearchInput from "../components/Inputs/SearchInput/SearchInput";
 import CountryInput from "../components/Inputs/CountryInput/CountryInput";
-import EventCard, { EventItem } from "../components/Card/Card";
+import EventCard, { EventItem, EventCardSkeleton } from "../components/Card/Card";
 import styles from "./page.module.scss";
 
 const API_KEY = "w3FH1BQO5lCqAh3eiT9RxTwR4I3QrFdE";
@@ -13,12 +13,15 @@ export default function DashboardPage() {
   const [events, setEvents] = useState<EventItem[]>([]);
   const [keyword, setKeyword] = useState("");
   const [countryCode, setCountryCode] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const fetchEvents = useMemo(
     () =>
       debounce(async (keyWord: string, countryCode: string) => {
+        setIsLoading(true);
         if (!keyWord.trim() && !countryCode.trim()) {
           setEvents([]);
+          setIsLoading(false);
           return;
         }
         try {
@@ -33,6 +36,8 @@ export default function DashboardPage() {
         } catch (error) {
           console.error(error);
           setEvents([]);
+        } finally {
+          setIsLoading(false);
         }
       }, 400),
     [],
@@ -61,9 +66,11 @@ export default function DashboardPage() {
 
       <section className={styles.cardsSection}>
         <ul className={styles.cardsGrid}>
-          {events.map((event) => (
-            <EventCard key={event.id} item={event} />
-          ))}
+          {isLoading
+            ? [...Array(6)].map((_, i) => <EventCardSkeleton key={i} />)
+            : events.map((event) => (
+                <EventCard key={event.id} item={event} />
+              ))}
         </ul>
       </section>
     </div>

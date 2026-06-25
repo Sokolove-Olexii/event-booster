@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import useAuth from "@/hooks/Auth/useAuth/useAuth";
 import { ThreeDots } from "react-loader-spinner";
+import styles from "./Auth.module.scss";
 
 export default function GuestGuard({
   children,
@@ -21,15 +22,8 @@ export default function GuestGuard({
 
   if (isLoading) {
     return (
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          height: "100vh",
-        }}
-      >
-        <ThreeDots color="#ff751d" height={80} width={80} />
+      <div className={styles.authStyles}>
+        <ThreeDots color="#dc56c5" height={80} width={80} />
       </div>
     );
   }
