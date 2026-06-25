@@ -1,0 +1,157 @@
+.modal {
+  &__root {
+    position: relative;
+    z-index: 50;
+  }
+
+  &__backdrop {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(2px);
+  }
+
+  &__container {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+  }
+
+  &__content {
+    position: relative;
+    width: 100%;
+    max-width: 320px;
+    background-color: #fffdfd;
+    border-radius: 150px 0 150px 0;
+    padding: 56px 24px 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    max-height: 90vh;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  &__closeBtn {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    line-height: 1;
+    color: #5c00ff;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+
+  &__image {
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 24px;
+  }
+
+  &__body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__infoBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+
+  &__title {
+    color: #df44c5;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0;
+    letter-spacing: 0.5px;
+  }
+
+  &__text {
+    color: #0e0e0e;
+    font-size: 15px;
+    line-height: 1.4;
+    margin: 0;
+    font-weight: 400;
+  }
+
+  &__priceRow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 4px;
+  }
+
+  &__barcodeIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+  }
+
+  &__buyBtn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #5c00ff;
+    color: white;
+    text-decoration: none;
+    padding: 11px 40px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 15px;
+    transition: opacity 0.2s;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &__moreBtn {
+    width: 230px;
+    height: 40px;
+    background-color: transparent;
+    color: #5c00ff;
+    border: 1px solid #5c00ff;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-top: 8px;
+
+    &:hover {
+      background-color: #5c00ff;
+      color: white;
+    }
+  }
+}

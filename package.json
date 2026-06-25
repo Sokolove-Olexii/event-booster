@@ -12,9 +12,11 @@
     "deploy": "gh-pages -d out --dotfiles"
   },
   "dependencies": {
+    "@headlessui/react": "^2.2.10",
     "@hookform/resolvers": "^5.4.0",
     "@supabase/ssr": "^0.12.0",
     "@supabase/supabase-js": "^2.108.1",
+    "debounce": "^3.0.0",
     "framer-motion": "^12.40.0",
     "gh-pages": "^6.3.0",
     "motion": "^12.40.0",

@@ -1,0 +1,125 @@
+.card {
+  position: relative;
+  max-width: 196px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+
+  @media screen and (min-width: 320px) and (max-width: 768px) {
+    max-width: 138px;
+  }
+
+  &__imgContainer {
+    margin-top: 13px;
+    width: 180px;
+    height: 227px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50px 0px 50px 0px;
+    position: relative;
+    z-index: 2;
+
+    @media screen and (min-width: 320px) and (max-width: 768px) {
+      margin-top: 9px;
+      width: 128px;
+      height: 161px;
+    }
+  }
+
+  &__pink {
+    position: absolute;
+    right: 0;
+    top: 13px;
+    width: 153px;
+    height: 143px;
+    z-index: 1;
+    box-sizing: border-box;
+    border: 2px solid rgba(220, 86, 197, 0.3);
+    border-radius: 50px 0px 50px 0px;
+
+    @media screen and (min-width: 320px) and (max-width: 768px) {
+      top: 9px;
+      width: 108px;
+      height: 101px;
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    z-index: 3;
+    padding-top: 5px;
+  }
+
+  &__title {
+    margin: 5px 0;
+    padding: 0 20px;
+    color: rgb(220, 86, 197);
+    font-family: var(--font-montserrat, "Montserrat", sans-serif);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+
+    @media screen and (min-width: 320px) and (max-width: 768px) {
+      font-size: 14px;
+      line-height: 17px;
+    }
+  }
+
+  &__startDate {
+    position: relative;
+    margin-bottom: 5px;
+    color: rgb(255, 255, 255);
+    font-family: var(--font-montserrat, "Montserrat", sans-serif);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: center;
+
+    @media screen and (min-width: 320px) and (max-width: 768px) {
+      font-size: 14px;
+      line-height: 17px;
+    }
+  }
+
+  &__venues {
+    color: rgb(255, 255, 255);
+    font-family: var(--font-montserrat, "Montserrat", sans-serif);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 17px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media screen and (min-width: 320px) and (max-width: 768px) {
+      font-size: 12px;
+      line-height: 15px;
+    }
+
+    &::before {
+      margin-right: 4px;
+      content: "";
+      display: inline-block;
+      background-image: url("../../../../public/icons/LocationIcon.svg");
+      width: 7px;
+      height: 10px;
+      background-repeat: no-repeat;
+      background-size: contain;
+
+      @media screen and (min-width: 320px) and (max-width: 768px) {
+        width: 6px;
+        height: 9px;
+        margin-right: 3px;
+      }
+    }
+  }
+}

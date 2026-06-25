@@ -1,0 +1,35 @@
+.searchLabel {
+  position: relative;
+  display: flex;
+  width: 100%;
+
+  &__input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 14px 10px 30px;
+    color: rgb(147, 147, 147);
+    font-family: var(--font-montserrat, 'Montserrat', sans-serif);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.2);
+    
+    &::placeholder {
+      color: rgb(147, 147, 147);
+    }
+  }
+
+  &__icon {
+    bottom: 14px;
+    right: 26px;
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    opacity: 0.6;
+    pointer-events: none;
+  }
+}

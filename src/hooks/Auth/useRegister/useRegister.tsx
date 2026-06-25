@@ -39,8 +39,15 @@ export default function useRegister() {
   });
 
   const handleGoogleLogin = async () => {
+    const basePath = window.location.pathname.startsWith("/event-booster") ? "/event-booster" : "";
     await supabase.auth.signInWithOAuth({
       provider: "google",
+      options: {
+        redirectTo: `${window.location.origin}${basePath}/dashboard`,
+        queryParams: {
+          prompt: "select_account",
+        },
+      },
     });
   };
 

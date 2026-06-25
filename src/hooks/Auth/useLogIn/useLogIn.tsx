@@ -31,10 +31,11 @@ export default function useLogIn() {
   });
 
   const handleGoogleLogin = async () => {
+    const basePath = window.location.pathname.startsWith("/event-booster") ? "/event-booster" : "";
     const { error } = await supabase.auth.signInWithOAuth({
       provider: "google",
       options: {
-        redirectTo: `${window.location.origin}/dashboard`,
+        redirectTo: `${window.location.origin}${basePath}/dashboard`,
         queryParams: {
           prompt: "select_account",
         },
